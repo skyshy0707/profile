@@ -90,11 +90,6 @@ exports.retrieveProfileData = async (request, response) => {
         account_calendar_days: accountCalendarDaysAuth
     }
 
-    console.log(
-        "dayCounterAuth", dayCounterAuth,
-        "accountCalendarDaysAuth", accountCalendarDaysAuth
-    )
-
     await Profile.update(updProfileData, { where: { userId: user.id } })
         .then(results => { 
             console.log(`Updated profile ${results}`) 

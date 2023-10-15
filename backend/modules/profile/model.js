@@ -1,8 +1,7 @@
 const db = require("../../db.js");
 const User = require("../user/model.js")(db.sequelize, db.Sequelize)
 
-const DAY_COUNTER_MAX = 92
-const MS_PER_HOUR = 86400000
+const { DAY_COUNTER_MAX, MS_PER_DAY } = require("../helpers/constants.js")
 
 module.exports = () => {
     const Profile = db.sequelize.define("profile", {
@@ -49,7 +48,7 @@ module.exports = () => {
             defaultValue: 0,
             get() {
                 var referenceRegistrationDate = this.reference_registration_date
-                return Math.floor((new Date() - referenceRegistrationDate) / MS_PER_HOUR) + 1
+                return Math.floor((new Date() - referenceRegistrationDate) / MS_PER_DAY) + 1
 
             },
             set(value){

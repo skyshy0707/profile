@@ -11,7 +11,7 @@ const Comment = require("../comment/model.js")(db.sequelize, db.Sequelize)
 const Profile = require("./model.js")(db.sequelize, db.Sequelize)
 const User = require("../user/model.js")(db.sequelize, db.Sequelize)
 
-const DAY_COUNTER_MAX = 92
+const { DAY_COUNTER_MAX } = require("../helpers/constants.js")
 
 exports.create = async (request, response) => {
     const data = request.body

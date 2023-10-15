@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="loading" lang="en">
+<!-- BEGIN : Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="Apex admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Apex admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>User counters</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- BEGIN APEX CSS-->
+    <link rel="stylesheet" type="text/css" href="./app-assets/css-rtl/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./app-assets/css-rtl/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="./app-assets/css-rtl/colors.css">
+    <link rel="stylesheet" type="text/css" href="./app-assets/css-rtl/components.css">
+    <link rel="stylesheet" type="text/css" href="./app-assets/css-rtl/custom-rtl.css">
+    <!-- END APEX CSS-->
+    <!-- END Page Level CSS-->
+</head>
+<!-- END : Head-->
+
+<!-- BEGIN : Body-->
+
+<body class="vertical-layout vertical-menu 2-columns navbar-static layout-dark" data-menu="vertical-menu" data-col="2-columns">
+    
+    <div class="header-menu-height">
+        <div class="header-menu">
+            <header class="container-fluid navbar-wrapper">
+                <div class="navbar-container">
+                    <nav class="collapse navbar-collapse d-block">
+                        <ul class="navbar-nav">
+                            <li class="dropdown nav-item mr-1">
+                                <a class="btn btn-primary nav-link form-text" href="/login" onclick="logout();" style="width: 100px"><span>Logout</span></a>
+                            </li>
+                        </ul>
+                        
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="main-panel px-2">
+            <div class="main-content">
+                
+                <div class="container">
+                    <h3 class="position-relative" style="text-align:right">
+                        User counters
+                    </h3>
+                    <form id="profile" enctype="multipart/form-data">
+                        <fieldset class="form-group position-relative">
+                            <label class="property-phonenumber float-left">Day counter:</label>  
+                            <br>
+                            <input id="day_counter" type="number" name="day_counter" onkeyup="return false" onkeydown="return false" class="form-control profile-params-field" step="1" min="0" max="92" placeholder=":Day count"/>
+                            
+                            <span id="errorUrl" class="position-relative float-left"></span>
+    
+                        </fieldset>
+    
+                        <fieldset class="form-group position-relative">
+                            <label class="property-phonenumber float-left">Amount:</label>
+                            <br>
+                            <input id="amount" type="number" name="amount" onkeyup="return false" onkeydown="return false" class="form-control profile-params-field" step="1" min="0" placeholder=":Amount">
+                        </fieldset>
+    
+                        <fieldset class="form-group position-relative">
+                            <input id="input_value_for_amount"  type="number" name="input_value_for_amount" class="form-control profile-params-field" placeholder=":Input amount">
+                        </fieldset>
+                        <button id="reset" type="submit" class="btn btn-primary position-relative float-left">RESET</button>
+    
+                        <button type="submit" class="mx-1 btn btn-primary position-relative float-left">SEND</button>
+                        
+                    </form>
+                    <br>
+                    <br>
+                    <ul id="profileErrors" style="float: right">
+    
+                    </ul>
+                    <br>
+    
+                    <form id="comment">
+                        <fieldset class="form-group position-relative">
+                            <textarea name="comment" class="form-control" required placeholder=":Comment"></textarea>
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary position-relative float-left">COMMENT</button>
+                    </form>
+                    <ul id="commentErrors" class="float-left">
+
+                    </ul>
+
+                </div>
+                <br>
+                <br>
+                <br>
+                <ul id="comments" class="container pre-scrollable swich-marker">
+                </ul>
+            </div>      
+        </div>
+    </div>
+    
+    <script>
+        const backendUrl = '{{backendUrl}}'
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/home.js" ></script>
+</body>
